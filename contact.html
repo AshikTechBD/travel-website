@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact the Tour and Travels team to plan your dream vacation or inquire about customized expedition guides.">
+  <title>Tour and Travels | Contact &amp; Plan Your Trip</title>
+  
+  <!-- 5. Link external CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================================================================== -->
+  <!-- 2. NAVIGATION BAR SECTION (Interlinking all 5 HTML pages) -->
+  <!-- ==================================================================== -->
+  <header class="header-nav">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        ✈️ Tour &amp; <span>Travels</span>
+      </a>
+      
+      <!-- Nav bar items for switching between all 5 pages -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="adventures.html">Adventures</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================================================================== -->
+  <!-- MAIN CONTENT CONTAINER -->
+  <!-- ==================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- Page Title & Header Banner -->
+    <section class="page-header">
+      <h1>Get in Touch with Our Travel Team</h1>
+      <p>Have questions about a destination or need a custom travel plan? We're here to help bring your travel dreams to reality.</p>
+    </section>
+
+    <!-- Content & Images Section -->
+    <section class="flex-row-content">
+      <div class="flex-row-text">
+        <h2>We Would Love to Hear From You!</h2>
+        
+        <!-- 3. Paragraph 1 on Contact Page -->
+        <p>
+          Whether you are a solo traveler seeking advice on safety and accommodation, a family planning a multi-generational summer holiday, or an outdoor enthusiast aiming to trek remote mountain passes, our dedicated team of travel experts is ready to assist you. Fill out the contact form below with your inquiries, and we will respond within 24 hours.
+        </p>
+
+        <!-- 3. Paragraph 2 on Contact Page -->
+        <p>
+          We also welcome contributions from guest travel writers, local photographers, and conservationists. If you have a compelling travel narrative or high-resolution imagery you would like to share with our global community, reach out to our editorial desk using the inquiry form.
+        </p>
+      </div>
+
+      <!-- 3. Image 1 on Contact Page -->
+      <div class="flex-row-media">
+        <img src="images/contact_travel.jpg" alt="Travel planning flat-lay with vintage camera, map, and passport on a rustic desk" class="responsive-img">
+      </div>
+    </section>
+
+    <!-- Additional Visual Block with Image 2 -->
+    <section style="margin-bottom: 40px;">
+      <div class="flex-row-content reverse">
+        <div class="flex-row-text">
+          <h3>Visit Our Global Consultation Hubs</h3>
+          <p>
+            Our travel advisors operate out of regional hub offices in Zurich, Tokyo, and New York. We host weekly travel workshops, gear maintenance sessions, and sustainable tourism seminars for local adventure enthusiasts.
+          </p>
+        </div>
+
+        <!-- 3. Image 2 on Contact Page -->
+        <div class="flex-row-media">
+          <img src="images/contact_camp.jpg" alt="Scenic lakeside camp at golden hour with warm twilight reflections" class="responsive-img">
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- CONTACT FORM SECTION -->
+    <!-- ==================================================================== -->
+    <section>
+      <div class="contact-form">
+        <h2 style="font-family: var(--font-heading); color: var(--primary-color); text-align: center; margin-bottom: 24px;">Send Us a Message</h2>
+        
+        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you for reaching out! Our team will contact you shortly.');">
+          
+          <!-- Full Name Field -->
+          <div class="form-group">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" placeholder="e.g. Alex Johnson" required>
+          </div>
+
+          <!-- Email Address Field -->
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="e.g. alex@example.com" required>
+          </div>
+
+          <!-- Destination Interest Field -->
+          <div class="form-group">
+            <label for="interest">Interested Destination / Topic:</label>
+            <select id="interest" name="interest">
+              <option value="swiss">Swiss Alpine Trekking</option>
+              <option value="borabora">Bora Bora Island Resort</option>
+              <option value="europe">European Historical Cities</option>
+              <option value="sahara">Sahara Desert Safari</option>
+              <option value="other">Other / General Inquiry</option>
+            </select>
+          </div>
+
+          <!-- Message Field -->
+          <div class="form-group">
+            <label for="message">Your Message:</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell us about your trip plans or questions..." required></textarea>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn-submit">Send Message 🚀</button>
+
+        </form>
+      </div>
+    </section>
+
+    <!-- 4. Additional External Links Section -->
+    <section class="external-resources">
+      <h3>Official International Travel Services</h3>
+      <p>Useful external links for embassy info, visa applications, and real-time mapping:</p>
+      <ul>
+        <li>
+          Locate world diplomatic missions via the <a href="https://www.embassypages.com" class="external-link" target="_blank" rel="noopener noreferrer">EmbassyPages Worldwide Directory</a>.
+        </li>
+        <li>
+          Check global weather and satellite radar updates on <a href="https://www.accuweather.com" class="external-link" target="_blank" rel="noopener noreferrer">AccuWeather</a>.
+        </li>
+        <li>
+          Plan navigation routes and explore satellite maps on <a href="https://maps.google.com" class="external-link" target="_blank" rel="noopener noreferrer">Google Maps</a>.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ==================================================================== -->
+  <!-- 6. FOOTER SECTION -->
+  <!-- ==================================================================== -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="adventures.html">Adventures</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p>&copy; 2026 Tour and Travels. All rights reserved.</p>
+      <p style="margin-top: 8px; font-size: 13px;">Developed by: Md. Asiquzzaman | ID: 2220772</p>
+    </div>
+  </footer>
+
+</body>
+</html>

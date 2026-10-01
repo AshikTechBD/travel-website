@@ -1,0 +1,584 @@
+/* 
+  ==========================================================================
+  WANDERLUST TRAVEL & EXPLORATION - MAIN STYLESHEET
+  Assignment 1: HTML & CSS Basics
+  ==========================================================================
+*/
+
+/* 
+  --------------------------------------------------------------------------
+  7. GOOGLE FONTS IMPORT
+  Two Google Fonts Used:
+  1. 'Outfit' - Primary Heading Font (Bold, Modern Display)
+  2. 'Inter' - Primary Body Text Font (Clean, Readable Sans-Serif)
+  --------------------------------------------------------------------------
+*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap');
+
+/* 
+  --------------------------------------------------------------------------
+  GLOBAL RESETS & CSS VARIABLES
+  Using basic CSS properties: margin, padding, box-sizing, color palette
+  --------------------------------------------------------------------------
+*/
+:root {
+  --primary-color: #0f4c81;       /* Deep Ocean Blue */
+  --primary-hover: #135c9c;
+  --secondary-color: #e07a5f;     /* Sunset Terracotta */
+  --accent-color: #f4a261;        /* Golden Sand */
+  --bg-light: #f8fafc;            /* Soft Light Background */
+  --card-bg: #ffffff;             /* Pure White Card Background */
+  --text-dark: #1e293b;           /* Slate Dark Text */
+  --text-muted: #64748b;          /* Muted Gray Text */
+  --border-color: #e2e8f0;        /* Subtle Border */
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.12);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-light);
+  /* Soft top-to-bottom gradient backdrop for extra depth */
+  background-image: linear-gradient(180deg, #eaf2fb 0px, var(--bg-light) 420px);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Highlight color when the user selects text */
+::selection {
+  background-color: var(--secondary-color);
+  color: #ffffff;
+}
+
+/* 
+  --------------------------------------------------------------------------
+  2. NAVIGATION BAR STYLING
+  Flexbox layout for sticky navigation bar interlinking all 5 pages
+  --------------------------------------------------------------------------
+*/
+.header-nav {
+  background-color: #ffffff;
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo span {
+  color: var(--secondary-color);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 500;
+  font-size: 15px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  background-color: rgba(15, 76, 129, 0.08);
+  color: var(--primary-color);
+}
+
+/* Highlight for Active Page */
+.nav-links li a.active {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* 
+  --------------------------------------------------------------------------
+  PAGE CONTAINER & GENERAL CONTENT STYLING
+  --------------------------------------------------------------------------
+*/
+.main-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 25px;
+  flex: 1;
+  width: 100%;
+}
+
+/* Eye-catching gradient banner used at the top of every page */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 46px 30px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--primary-color) 0%, #1a72b8 55%, var(--secondary-color) 130%);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.page-header h1 {
+  font-family: var(--font-heading);
+  font-size: 40px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.page-header p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 18px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Decorative accent bar underneath every section heading */
+.main-wrapper h2 {
+  font-family: var(--font-heading);
+  font-size: 27px;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+  padding-bottom: 14px;
+  position: relative;
+}
+
+.main-wrapper h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 75px;
+  height: 4px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+/* Center the accent bar under the centered contact form heading */
+.contact-form h2::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Vertical spacing between the stacked content sections of each page */
+.main-wrapper > section:not(.page-header) {
+  margin-top: 45px;
+}
+
+/* Rounded, elevated frame around the large hero image on the home page */
+.hero-image-container {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 6px solid #ffffff;
+}
+
+/* Paragraph styling */
+p {
+  margin-bottom: 20px;
+  color: #334155;
+  font-size: 16px;
+}
+
+/* General Image Styling */
+.responsive-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  background-color: var(--border-color); /* Placeholder color while the image loads */
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.responsive-img:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* 
+  --------------------------------------------------------------------------
+  8. PAGE SPECIFIC LAYOUT: DISPLAY FLEX IMPLEMENTATION
+  Used on adventures.html (and hero/feature blocks)
+  --------------------------------------------------------------------------
+*/
+/* CSS DISPLAY FLEX PROPERTY USE */
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.flex-card {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 300px; /* Flex grow, flex shrink, flex basis */
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.flex-card:hover {
+  transform: translateY(-5px);
+}
+
+.flex-card img {
+  height: 220px;
+  width: 100%;
+  object-fit: cover;
+  background-color: var(--border-color);
+  border-radius: var(--radius-sm);
+  margin-bottom: 18px;
+  transition: transform 0.4s ease;
+}
+
+/* Subtle zoom effect when hovering an adventure card */
+.flex-card:hover img {
+  transform: scale(1.06);
+}
+
+.flex-card h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Dual Column Flex Layout for Content + Image */
+.flex-row-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 40px 0;
+  background-color: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.flex-row-content.reverse {
+  flex-direction: row-reverse;
+}
+
+.flex-row-text {
+  flex: 1;
+}
+
+.flex-row-media {
+  flex: 1;
+}
+
+/* 
+  --------------------------------------------------------------------------
+  8. PAGE SPECIFIC LAYOUT: DISPLAY GRID IMPLEMENTATION
+  Used on destinations.html
+  --------------------------------------------------------------------------
+*/
+/* CSS DISPLAY GRID PROPERTY USE */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.grid-card {
+  background-color: var(--card-bg);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-lg);
+}
+
+.grid-card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background-color: var(--border-color);
+  transition: transform 0.4s ease;
+}
+
+/* Subtle zoom effect when hovering a destination card */
+.grid-card:hover .grid-card-img {
+  transform: scale(1.06);
+}
+
+.grid-card-body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.grid-card-body h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.grid-card-body .badge {
+  display: inline-block;
+  background-color: rgba(224, 122, 95, 0.15);
+  color: var(--secondary-color);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  align-self: flex-start;
+}
+
+/* 
+  --------------------------------------------------------------------------
+  EXTERNAL LINKS SECTION STYLING (A TAGS)
+  --------------------------------------------------------------------------
+*/
+.external-resources {
+  background-color: #eff6ff;
+  border-left: 4px solid var(--primary-color);
+  padding: 24px;
+  border-radius: var(--radius-sm);
+  margin: 40px 0;
+}
+
+.external-resources h3 {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.external-resources ul {
+  list-style-type: square;
+  padding-left: 20px;
+}
+
+.external-resources li {
+  margin-bottom: 8px;
+}
+
+.external-link {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.external-link:hover {
+  color: var(--secondary-color);
+  text-decoration: underline;
+}
+
+/* 
+  --------------------------------------------------------------------------
+  CONTACT FORM STYLING
+  --------------------------------------------------------------------------
+*/
+.contact-form {
+  background-color: var(--card-bg);
+  padding: 35px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  max-width: 650px;
+  margin: 0 auto;
+  border: 1px solid var(--border-color);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(15, 76, 129, 0.15);
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-hover);
+}
+
+/* 
+  --------------------------------------------------------------------------
+  FOOTER STYLING
+  --------------------------------------------------------------------------
+*/
+.main-footer {
+  background-color: #0f172a;
+  color: #94a3b8;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.footer-links a {
+  color: #cbd5e1;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: var(--secondary-color);
+}
+
+/* Keyboard accessibility: visible focus ring on every clickable element */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* ==================================================================== */
+/* RESPONSIVE MEDIA QUERIES (Mobile & Tablet Adjustments)               */
+/* ==================================================================== */
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  /* Wrap the navigation links neatly on small screens */
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .page-header {
+    padding: 32px 20px;
+  }
+
+  .page-header h1 {
+    font-size: 30px;
+  }
+
+  .main-wrapper {
+    padding: 28px 18px;
+  }
+
+  .main-wrapper h2 {
+    font-size: 23px;
+  }
+
+  .flex-row-content {
+    flex-direction: column;
+    padding: 22px;
+  }
+
+  .flex-row-content.reverse {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    padding: 24px;
+  }
+}

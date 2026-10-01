@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Top world destinations featured in Tour and Travels. Explore stunning places around the world.">
+  <title>Tour and Travels | Iconic Destinations</title>
+  
+  <!-- 5. Link external CSS stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==================================================================== -->
+  <!-- 2. NAVIGATION BAR SECTION (Interlinking all 5 HTML pages) -->
+  <!-- ==================================================================== -->
+  <header class="header-nav">
+    <nav class="nav-container">
+      <a href="index.html" class="logo">
+        ✈️ Tour &amp; <span>Travels</span>
+      </a>
+      
+      <!-- Nav bar items for switching between all 5 pages -->
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html" class="active">Destinations</a></li>
+        <li><a href="adventures.html">Adventures</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ==================================================================== -->
+  <!-- MAIN CONTENT CONTAINER -->
+  <!-- ==================================================================== -->
+  <main class="main-wrapper">
+
+    <!-- Page Title & Header Banner -->
+    <section class="page-header">
+      <h1>Iconic World Destinations</h1>
+      <p>Discover handpicked travel hotspots renowned for their striking natural beauty, rich historical monuments, and vibrant cultural heritage.</p>
+    </section>
+
+    <!-- 3. Paragraph 1 of Content -->
+    <section>
+      <p>
+        From the majestic snow-laden peaks of the European Alps to the tranquil turquoise lagoons of the South Pacific, our earth offers an infinite tapestry of awe-inspiring locations waiting to be explored. Selecting the ideal destination depends on your personal passion—whether that involves seeking total relaxation, immersing yourself in culinary history, or tackling rugged wilderness trails.
+      </p>
+
+      <!-- 3. Paragraph 2 of Content -->
+      <p>
+        Planning an unforgettable getaway requires understanding seasonal climates, regional customs, and local transport networks. Below, we showcase four top-tier destinations that captivate travelers worldwide year after year. Each region provides a unique blend of historical architecture, local hospitality, and breathtaking natural scenery.
+      </p>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- 8. CSS DISPLAY GRID FEATURE SHOWCASE -->
+    <!-- This section uses display: grid defined in styles.css (.grid-container) -->
+    <!-- Contains 4 images (satisfying requirement of at least 2 images) -->
+    <!-- ==================================================================== -->
+    <!-- CSS DISPLAY GRID PROPERTY USE -->
+    <section class="grid-container">
+
+      <!-- Grid Card 1 -->
+      <article class="grid-card">
+        <!-- 3. Image 1 on Destinations Page -->
+        <img src="images/dest_alps.jpg" alt="Majestic aurora borealis over snow-capped alpine peaks" class="grid-card-img">
+        <div class="grid-card-body">
+          <span class="badge">Europe</span>
+          <h3>Swiss Alpine Wonderland</h3>
+          <p>Experience pristine glacial lakes, scenic train routes, and towering peaks in the heart of Switzerland.</p>
+        </div>
+      </article>
+
+      <!-- Grid Card 2 -->
+      <article class="grid-card">
+        <!-- 3. Image 2 on Destinations Page -->
+        <img src="images/dest_borabora.jpg" alt="Crystal clear turquoise lagoon with overwater bungalows in Bora Bora" class="grid-card-img">
+        <div class="grid-card-body">
+          <span class="badge">Oceania</span>
+          <h3>Bora Bora Coastal Haven</h3>
+          <p>Unwind in luxury overwater bungalows surrounded by coral reefs and crystal-clear turquoise waters.</p>
+        </div>
+      </article>
+
+      <!-- Grid Card 3 -->
+      <article class="grid-card">
+        <!-- 3. Image 3 on Destinations Page -->
+        <img src="images/dest_europe.jpg" alt="Stunning panoramic view of historic European architecture at dusk" class="grid-card-img">
+        <div class="grid-card-body">
+          <span class="badge">Cultural</span>
+          <h3>Historic European Capitals</h3>
+          <p>Stroll through centuries of architecture, cobblestone avenues, cozy cafes, and world-class museums.</p>
+        </div>
+      </article>
+
+      <!-- Grid Card 4 -->
+      <article class="grid-card">
+        <!-- 3. Image 4 on Destinations Page -->
+        <img src="images/dest_sahara.jpg" alt="Golden Sahara desert sand dunes under warm sunset light" class="grid-card-img">
+        <div class="grid-card-body">
+          <span class="badge">Africa</span>
+          <h3>Sahara Desert Dunes</h3>
+          <p>Witness magnificent golden sand dunes, starlit desert camps, and camel treks across endless horizons.</p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- 4. Additional External Links Section -->
+    <section class="external-resources">
+      <h3>Recommended Travel Booking & Guide Sites</h3>
+      <p>Enhance your destination research using trusted international portals:</p>
+      <ul>
+        <li>
+          Plan your travel itinerary with unbiased advice on <a href="https://www.lonelyplanet.com" class="external-link" target="_blank" rel="noopener noreferrer">Lonely Planet</a>.
+        </li>
+        <li>
+          Read millions of traveler reviews on <a href="https://www.tripadvisor.com" class="external-link" target="_blank" rel="noopener noreferrer">TripAdvisor</a>.
+        </li>
+        <li>
+          Explore worldwide flight and hotel options on <a href="https://www.booking.com" class="external-link" target="_blank" rel="noopener noreferrer">Booking.com</a>.
+        </li>
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ==================================================================== -->
+  <!-- 6. FOOTER SECTION -->
+  <!-- ==================================================================== -->
+  <footer class="main-footer">
+    <div class="footer-content">
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="adventures.html">Adventures</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <p>&copy; 2026 Tour and Travels. All rights reserved.</p>
+      <p style="margin-top: 8px; font-size: 13px;">Developed by: Md. Asiquzzaman | ID: 2220772</p>
+    </div>
+  </footer>
+
+</body>
+</html>
